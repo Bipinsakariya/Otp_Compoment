@@ -1,15 +1,15 @@
 # Otp_Compoment
 
-This repository contains a sample code about that implements of OTP Inputs at Tagline.
+This repository contains a sample code that implements OTP Inputs at Tagline.
 
 ## Class Structure :
-Class file inclues following patterns
+Class file includes following patterns
 
 ### js File Structure:
-#####  That contains render method that manages View and Custom View Styling.
-            - App.js -> Base of every react project this inherited from View. It is required so that if any app loads this page is automatically loads first.
-            - OTPTextInput.js -> OTPTextInput class View that has the custoised Text Input.
-### To Customise the Styles:
+##### That contains render method that manages View and Custom View Styling.
+- App.js -> Base of every react project this inherited from View. It is required so that if any app loads this page is automatically loaded first.
+- OTPTextInput.js -> OTPTextInput class View that has the custoised Text Input.
+### To Customise the Styling:
 ##### Modified the OTPTextInput.js File according to the requirements.
 
 #### Here's Ref Video:
