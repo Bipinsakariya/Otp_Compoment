@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ViewPropTypes, TextInput, Text, Alert} from 'react-native';
-import OTPTextInput from './CustomOTPView'
+import OTPTextInput from './OTPTextInput'
 
 class CustomTextInput extends React.Component {
   state = {
