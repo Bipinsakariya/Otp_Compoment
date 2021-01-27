@@ -1,3 +1,3 @@
 # Otp_Compoment
 
-[![Watch the video](https://github.com/Bipinsakariya/Otp_Compoment/blob/main/Screen%20Recording.mov)](https://github.com/Bipinsakariya/Otp_Compoment/blob/main/Screen%20Recording.mov)
+[![Watch the video](https://j.gifs.com/ROZ1jY.gif)]
