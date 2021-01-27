@@ -1,12 +1,12 @@
 import React, { createRef } from 'react';
 import {StyleSheet, View, ViewPropTypes, TextInput, Text, Alert} from 'react-native';
 
-class CustomOTPView extends React.Component {
+class OTPTextInput extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       cellCount:[],
-      color:this.props.textInputStyle === 'Default' ? 'white' : this.props.textInputStyle === 'line' ? 'black' : this.props.backgroundColor,
+      color:this.props.textInputStyle === 'Default' ? 'black' : this.props.textInputStyle === 'Line' ? 'black' : this.props.backgroundColor,
       reference:[],
       value:[],
       textInputStyle:this.props.textInputStyle
@@ -57,7 +57,10 @@ class CustomOTPView extends React.Component {
                   if (value !== '') {
                     this.setState({...value})
                     // console.log('value', ...value + value)
-                    this.state.cellCount.length-1 === index ? null : this.refs['textInput' + (index+1)].focus()
+                    if(value && value.length == 1){
+                      this.state.cellCount.length-1 === index ? null : this.refs['textInput' + (index+1)].focus()
+                    }
+                    // this.state.cellCount.length-1 === index ? null : this.refs['textInput' + (index+1)].focus()
                   }
                            
                 }}
@@ -73,7 +76,7 @@ class CustomOTPView extends React.Component {
                 onFocus={()=> this.setState({color1:this.state.cellCount[index].color = 'green'})}
                 onBlur={()=> this.setState({color:this.state.cellCount[index].color = this.state.color})}
                 autoFocus={index === 0 && autoFocus}
-                style={[styles.textInputLine, CellStyle,{borderBottomColor:this.state.color}]}
+                style={[this.props.textInputStyle === 'Default' ? styles.textInputDefault : styles.textInputLine, CellStyle,{borderBottomColor:this.props.textInputStyle === 'Default' ? this.state.color :this.state.color, borderColor:this.props.textInputStyle === 'Default' ? this.state.color : 'transparent'}]}
                 onKeyPress={(event) => {
                   if(event.nativeEvent.key === 'Backspace'){
                     index === 0 ? null :
@@ -89,20 +92,24 @@ class CustomOTPView extends React.Component {
 };
 const styles = StyleSheet.create({
   textInputDefault:{
-    padding: 10,
+    // padding: 10,
     borderRadius: 5,
     backgroundColor:'white',
-    height: 40, 
-    width: 30,
+    height: 45, 
+    width: 40,
     borderColor:'#000',
-    borderWidth:1
+    borderWidth:1,
+    paddingHorizontal:14,
+    fontSize:18
   },
   textInputLine:{
-    padding: 10,
-    height: 40, 
-    width: 30,
+    // padding: 10,
+    height: 45, 
+    width: 40,
     borderBottomColor:'green',
-    borderBottomWidth:1
+    borderBottomWidth:1,
+    paddingHorizontal:14,
+    fontSize:18
   },
   otpContainer:{
     flexDirection:'row', 
@@ -110,4 +117,4 @@ const styles = StyleSheet.create({
     width:'100%'
   }
 })
-export default CustomOTPView;
+export default OTPTextInput;
