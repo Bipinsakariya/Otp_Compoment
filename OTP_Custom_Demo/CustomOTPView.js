@@ -73,10 +73,10 @@ class OTPTextInput extends React.Component {
                 }}
                 returnKeyType={'done'}
                 keyboardType={'number-pad'}
-                onFocus={()=> this.setState({color1:this.state.cellCount[index].color = 'green'})}
+                onFocus={()=> this.setState({color1:this.state.cellCount[index].color = 'blue'})}
                 onBlur={()=> this.setState({color:this.state.cellCount[index].color = this.state.color})}
                 autoFocus={index === 0 && autoFocus}
-                style={[this.props.textInputStyle === 'Default' ? styles.textInputDefault : styles.textInputLine, CellStyle,{borderBottomColor:this.props.textInputStyle === 'Default' ? this.state.color :this.state.color, borderColor:this.props.textInputStyle === 'Default' ? this.state.color : 'transparent'}]}
+                style={[this.props.textInputStyle === 'Default' ? styles.textInputDefault : styles.textInputLine, CellStyle,{borderBottomColor:this.props.textInputStyle === 'Default' ? this.state.cellCount[index].color :this.state.color, borderColor:this.props.textInputStyle === 'Default' ? this.state.cellCount[index].color : 'transparent'}]}
                 onKeyPress={(event) => {
                   if(event.nativeEvent.key === 'Backspace'){
                     index === 0 ? null :
